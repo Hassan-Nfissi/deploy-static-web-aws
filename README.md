@@ -1,4 +1,4 @@
-# Simple DevOps Project | DevOps Project for Practice | DevOps Project for Beginners
+# Deploy as static website on aws using terraform
 
 ## Overview
 
