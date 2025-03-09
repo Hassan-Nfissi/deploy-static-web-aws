@@ -5,7 +5,6 @@
 This real-time DevOps project demonstrates how to set up fully automated static website hosting on AWS using Terraform. The project automates the deployment of an S3-hosted website with CloudFront CDN, Route 53 DNS, and SSL certificate management, completing the setup in just a few seconds.
 
 ## Architecture
-![Image](https://github.com/user-attachments/assets/bdaeb6cd-565b-4dae-9223-46798091924c)
 The following AWS services are used to create a robust and scalable static website hosting solution:
 
 - **Amazon S3**: Stores static website content.
@@ -14,9 +13,7 @@ The following AWS services are used to create a robust and scalable static websi
 - **AWS Certificate Manager (ACM)**: Provides an SSL certificate for secure HTTPS access.
 
 ### Architecture Diagram
-
-_(Insert your architecture diagram here)_
-
+![Image](https://github.com/user-attachments/assets/bdaeb6cd-565b-4dae-9223-46798091924c)
 ## Prerequisites
 
 To follow along with this project, you will need:
