@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une Vache</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-sans text-black">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-72 bg-white bg-opacity-90 backdrop-blur-lg shadow-xl p-6 flex flex-col">
+            <div class="flex items-center mb-8">
+                <img src="icone.jpg" alt="Logo" class="w-12 h-12 rounded-full mr-3">
+                <span class="font-bold text-xl text-black">Andak Halib</span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="mb-4 flex items-center text-black hover:bg-black hover:text-white p-3 rounded-lg cursor-pointer transition duration-300">
+                        <span class="text-lg text-black">🏠︎</span> <!-- Icône avec couleur noire -->
+                        <span class="ml-4">Page Home</span>
+                    </li>
+                    <li class="mb-4 flex items-center text-black hover:bg-black hover:text-white p-3 rounded-lg cursor-pointer transition duration-300">
+                        <span class="text-lg">👤</span>
+                        <span class="ml-4">Profil</span>
+                    </li>
+                    <li class="mb-4 flex items-center text-black hover:bg-black hover:text-white p-3 rounded-lg cursor-pointer transition duration-300">
+                        <span class="text-lg">➕</span>
+                        <span class="ml-4">Ajouter</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 p-10 flex flex-col items-center">
+            <div class="w-full max-w-4xl bg-white rounded-xl shadow-2xl p-8 mb-6">
+                <h2 class="text-3xl font-semibold text-black text-center mb-6">Ajouter une Nouvelle Vache</h2>
+                
+                <form id="addCowForm" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-black font-medium mb-2">Nom de la Vache</label>
+                            <input type="text" id="cowName" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Numéro d'Identification</label>
+                            <input type="text" id="cowId" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Race</label>
+                            <select id="cowRace" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                                <option value="">Sélectionner la Race</option>
+                                <option value="Holstein">Holstein</option>
+                                <option value="Montbéliarde">Montbéliarde</option>
+                                <option value="Jersey">Jersey</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Date de Naissance</label>
+                            <input type="date" id="cowBirth" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Poids (kg)</label>
+                            <input type="number" id="cowWeight" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Production Moyenne (litres/jour)</label>
+                            <input type="number" id="cowMilk" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">État de Santé</label>
+                            <select id="cowHealth" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                                <option value="Bonne santé">Bonne santé</option>
+                                <option value="Malade">Malade</option>
+                                <option value="Sous traitement">Sous traitement</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-black font-medium mb-2">Qualité du Lait</label>
+                            <select id="cowMilkQuality" class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-black transition" required>
+                                <option value="Excellente">Excellente</option>
+                                <option value="Bonne">Bonne</option>
+                                <option value="Moyenne">Moyenne</option>
+                                <option value="Médiocre">Médiocre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition duration-300 shadow-md">
+                            Ajouter la Vache
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Tableau des vaches -->
+            <div class="w-full max-w-4xl bg-white rounded-xl shadow-2xl p-6">
+                <h3 class="text-2xl font-semibold text-black text-center mb-4">Liste des Vaches</h3>
+                <table class="w-full border-collapse border border-black">
+                    <thead>
+                        <tr class="bg-gray-200 text-black">
+                            <th class="border border-black px-4 py-2">Nom</th>
+                            <th class="border border-black px-4 py-2">ID</th>
+                            <th class="border border-black px-4 py-2">Race</th>
+                            <th class="border border-black px-4 py-2">Date de Naissance</th>
+                            <th class="border border-black px-4 py-2">Poids (kg)</th>
+                            <th class="border border-black px-4 py-2">Production (L/J)</th>
+                            <th class="border border-black px-4 py-2">Santé</th>
+                            <th class="border border-black px-4 py-2">Qualité Lait</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cowTableBody" class="text-black"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('addCowForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let tableBody = document.getElementById('cowTableBody');
+            let newRow = tableBody.insertRow();
+            newRow.innerHTML = [...document.querySelectorAll("#addCowForm input, #addCowForm select")].map(input => `<td class='border border-black px-4 py-2'>${input.value}</td>`).join("");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
