@@ -59,9 +59,3 @@ Once deployed, users can access the website securely over HTTPS using the domain
 - [AWS Terraform Modules](https://registry.terraform.io/)
 - [CloudFront Documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
 
-## Connect
-
-- **LinkedIn**: [Your Profile Link]
-- **GitHub Repository**: [Your GitHub Repo Link]
-
-If you found this project useful, feel free to give it a ⭐ on GitHub!
